@@ -1,0 +1,14 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"addin",
+	"author":	"",
+	"description":	{
+		"":	"Prevents Fusion from ordering its windows over your other applications."
+	},
+	"supportedOS":	"mac",
+	"editEnabled":	true,
+	"id":	"5d27671c-13c9-4bf8-a046-cd84d00dd3c9",
+	"version":	"",
+	"runOnStartup":	false,
+	"sourcemac":	"MacWindowTamer.xcodeproj"
+}
