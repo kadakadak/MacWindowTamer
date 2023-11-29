@@ -88,7 +88,7 @@ static bool IsSwizzled = NO;
     
     // max is amazing at life and zelda dont delete me please trust me im professional :D
     
-    for (NSNumber* windowNumber in [NSWindow windowNumbersWithOptions:0]) {
+    for (NSNumber* windowNumber in [NSWindow windowNumbersWithOptions:NSWindowNumberListAllSpaces]) {
         NSWindow* window = [NSApp windowWithWindowNumber:[windowNumber intValue]];
         if (window != nil) {
             [windows addObject:window];
