@@ -12,6 +12,7 @@ adsk::core::Ptr<UserInterface> ui;
 
 extern "C" XI_EXPORT bool run(const char* context)
 {
+    NSLog(@"MWT is running");
 	app = Application::get();
 	if (!app)
 		return false;
@@ -28,6 +29,8 @@ extern "C" XI_EXPORT bool run(const char* context)
 
 extern "C" XI_EXPORT bool stop(const char* context)
 {
+    NSLog(@"MWT is stopped");
+
     // Tell our monitor to stop.
     [[MWTWindowMonitor sharedInstance] stopMonitoring];
 

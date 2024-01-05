@@ -6,17 +6,17 @@
 #import "NSWindow+MWTWindowSwizzle.h"
 #import "MWTWindowMonitor.h"
 
+NSWindow* MainWindow = NULL;
+
 @implementation NSWindow (MWTWindowSwizzle)
 
+
 - (bool)MWTIsMainWindow {
-    NSWindowStyleMask mask = [self styleMask];
-    
-    return (mask & NSWindowStyleMaskTitled) &&
-           (mask & NSWindowStyleMaskClosable) &&
-           (mask & NSWindowStyleMaskMiniaturizable) &&
-           (mask & NSWindowStyleMaskResizable) &&
-           [[[self contentView] description] containsString:@"MW1_0Window"];
-}
+    if (MainWindow == NULL) {
+        MainWindow = [[NSApplication sharedApplication] mainWindow];
+    }
+    return self == MainWindow;
+    }
 
 - (bool)MWTIsToolWindow {
     return [[[self contentView] description] containsString:@"QTToolFrame"] ||
