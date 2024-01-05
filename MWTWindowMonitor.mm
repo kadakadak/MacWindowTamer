@@ -85,15 +85,24 @@ static bool IsSwizzled = NO;
 // Pulls all the window numbers and returns NSWindow objects for them (if they exist)
 - (NSArray*)windows {
     NSMutableArray* windows = [[NSMutableArray alloc] init];
-    
-    // max is amazing at life and zelda dont delete me please trust me im professional :D
-    
+        
     for (NSNumber* windowNumber in [NSWindow windowNumbersWithOptions:NSWindowNumberListAllSpaces]) {
         NSWindow* window = [NSApp windowWithWindowNumber:[windowNumber intValue]];
         if (window != nil) {
             [windows addObject:window];
         }
     }
+    
+    [windows sortUsingComparator:^NSComparisonResult(NSWindow* windowA, NSWindow* windowB) {
+        if ([windowA orderedIndex] > [windowB orderedIndex]) {
+            return NSOrderedDescending;
+        } else if ([windowA orderedIndex] < [windowB orderedIndex]) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedSame;
+        }
+    }];
+    
     return windows;
 }
 
@@ -119,22 +128,40 @@ static bool IsSwizzled = NO;
     return toolWindows;
 }
 
+// Once we know what the main window is, we can update relationships
+- (void)noteMainWindowChanged:(NSNotification*)notificaiton {
+    [self updateRelationships];
+}
+
 // Makes all the toolWindows children of the main window
 - (void)updateRelationships {
-    NSWindow* mainWindow = [self mainWindow];
     
-    for (NSWindow* toolWindow in [self currentToolWindows]) {
-        [mainWindow addChildWindow:toolWindow ordered:NSWindowAbove];
+    @try {
+        NSWindow* mainWindow = [self mainWindow];
+        if (mainWindow != NULL) {
+            for (NSWindow* toolWindow in [self currentToolWindows]) {
+                [mainWindow addChildWindow:toolWindow ordered:NSWindowAbove];
+            }
+        }
+    }
+    @catch(id anException) {
+        NSLog(@"MWT failed to update relationships %@", anException);
     }
 }
 
 // Start swizzle
 - (void)startMonitoring {
+    // Listen for changes to the main window
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(noteMainWindowChanged:) name:NSWindowDidBecomeMainNotification  object:NULL];
+
     [MWTWindowMonitor swizzle];
 }
 
 // Undo swizzle & unset parent/child relationshis
 - (void)stopMonitoring {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
     [MWTWindowMonitor unswizzle];
     
     NSWindow* mainWindow = [self mainWindow];
