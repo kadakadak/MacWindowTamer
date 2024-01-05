@@ -2,7 +2,7 @@ The aim of this Add-In is to improve how Fusion's various browser and tool windo
 
 **To Install:**
 
-- Download and open the release disk image. 
+- Download and open the [release disk image](https://github.com/kadakadak/MacWindowTamer/releases/download/v0.9/MacWindowTamer.dmg). 
 - You'll see an alias to the AddIns folder.
 - Drag the MacWindowTamer folder into the AddIns folder. If it doesn't work, try opening the AddIns folder first
 - Launch Fusion 360
