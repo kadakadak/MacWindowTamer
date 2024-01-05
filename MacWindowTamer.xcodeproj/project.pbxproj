@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		2BB196BE1AD586AA00164CD3 /* MacWindowTamer.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = MacWindowTamer.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB196C51AD5940800164CD3 /* MacWindowTamer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MacWindowTamer.mm; sourceTree = "<group>"; };
+		727F022F2B1A9174009B979A /* MacWindowTamer.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MacWindowTamer.manifest; sourceTree = "<group>"; };
 		72BA8DBE2AB69695007B6EE4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		72BA8DC02AB6971F007B6EE4 /* MWTWindowMonitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWTWindowMonitor.h; sourceTree = "<group>"; };
 		72BA8DC12AB6971F007B6EE4 /* MWTWindowMonitor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MWTWindowMonitor.mm; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		2BB196B51AD586AA00164CD3 = {
 			isa = PBXGroup;
 			children = (
+				727F022F2B1A9174009B979A /* MacWindowTamer.manifest */,
 				2BB196C51AD5940800164CD3 /* MacWindowTamer.mm */,
 				72BA8DC02AB6971F007B6EE4 /* MWTWindowMonitor.h */,
 				72BA8DC12AB6971F007B6EE4 /* MWTWindowMonitor.mm */,
@@ -113,6 +115,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Autodesk;
+				TargetAttributes = {
+					2BB196BD1AD586AA00164CD3 = {
+						DevelopmentTeam = VT5D6975LC;
+					};
+				};
 			};
 			buildConfigurationList = 2BB196B91AD586AA00164CD3 /* Build configuration list for PBXProject "MacWindowTamer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -162,7 +169,9 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = VT5D6975LC;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -205,8 +214,10 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = VT5D6975LC;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -230,6 +241,7 @@
 		2BB196C31AD586AA00164CD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(EFFECTIVE_PLATFORM_NAME)";
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = "";
@@ -239,9 +251,10 @@
 					"$(PYTHONINC)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INSTALL_PATH = "$(SRCROOT)";
+				INSTALL_PATH = "$(SRCROOT)/Autodesk/Autodesk Fusion 360/API/AddIns/MacWindowTamer";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(USER_LIBRARY_DIR)/Application\\ Support/Autodesk/Autodesk\\ Fusion\\ 360/API/CPP/lib/core.dylib",
 					"$(USER_LIBRARY_DIR)/Application\\ Support/Autodesk/Autodesk\\ Fusion\\ 360/API/CPP/lib/fusion.dylib",
@@ -256,6 +269,7 @@
 		2BB196C41AD586AA00164CD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(EFFECTIVE_PLATFORM_NAME)";
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = "";
@@ -265,7 +279,7 @@
 					"$(PYTHONINC)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 				);
-				INSTALL_PATH = "$(SRCROOT)";
+				INSTALL_PATH = "$(SRCROOT)/Autodesk/Autodesk Fusion 360/API/AddIns/MacWindowTamer";
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_LDFLAGS = (
