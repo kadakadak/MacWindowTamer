@@ -10,12 +10,12 @@ The aim of this Add-In is to improve how Fusion's various browser and tool windo
 - Select MacWindowTamer on the Add-Ins side of the the Script/Add-Ins picker
 - Run it
 - The first time you try to run it, you'll see something like this:
-![](SecurityDialog1.png)
+![](SecurityDialog2.png)
 - Go to System Settings : Privacy and Security and "Allow Anyway"
 ![](SecuritySettings.png)
 - Relaunch Fusion and attempt to run the plugin again
 - You'll get a second dialog:
-![](SecurityDialog2.png)
+![](SecurityDialog1.png)
 - Again, go back to System Settings : Privacy and Security and "Allow Anyway"
 
 - Go back to Fusion, start the Add In and see that it's running (You should see a little spinner next to it)
