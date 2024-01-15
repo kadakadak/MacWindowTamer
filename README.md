@@ -9,10 +9,17 @@ The aim of this Add-In is to improve how Fusion's various browser and tool windo
 - Open the Add-Ins panel
 - Select MacWindowTamer on the Add-Ins side of the the Script/Add-Ins picker
 - Run it
-- Go back and see that it's running (You should see a little spinner next to it)
-- Select Run on Startup if you like
+- The first time you try to run it, you'll see something like this:
+![](SecurityDialog1.png)
+- Go to System Settings : Privacy and Security and "Allow Anyway"
+![](SecuritySettings.png)
+- Relaunch Fusion and attempt to run the plugin again
+- You'll get a second dialog:
+![](SecurityDialog2.png)
+- Again, go back to System Settings : Privacy and Security and "Allow Anyway"
 
-The AddIn is signed, but you may need to allow it to run via System Settings -> Security Settings
+- Go back to Fusion, start the Add In and see that it's running (You should see a little spinner next to it)
+- Select Run on Startup if you like
 
 Alternatively, you can build it yourself and copy the project to:
 `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/AddIns`
