@@ -6,7 +6,7 @@
 #import "NSWindow+MWTWindowSwizzle.h"
 #import "MWTWindowMonitor.h"
 
-NSWindow* MainWindow = NULL;
+__weak NSWindow* MainWindow = NULL;
 
 @implementation NSWindow (MWTWindowSwizzle)
 
