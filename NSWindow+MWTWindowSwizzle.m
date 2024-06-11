@@ -22,6 +22,7 @@ __weak NSWindow* MainWindow = NULL;
     return [[[self contentView] description] containsString:@"QTToolFrame"] ||
     [[[self contentView] description] containsString:@"Progress"] ||
     [[[self contentView] description] containsString:@"Notification"] ||
+    [[[self contentView] description] containsString:@"QTMyToolboxWindow"] ||
     [[[self contentView] description] containsString:@"Browser"];
 }
 
@@ -33,4 +34,9 @@ __weak NSWindow* MainWindow = NULL;
     [[MWTWindowMonitor sharedInstance] updateRelationships];
 }
 
+- (void)MWT_makeKeyAndOrderFront:(nullable id)sender{
+    [self MWT_makeKeyAndOrderFront:sender];
+    NSLog(@"MWT makeKeyAndOrderFront %@", self);
+    [[MWTWindowMonitor sharedInstance] updateRelationships];
+}
 @end

@@ -25,6 +25,7 @@ static bool IsSwizzled = NO;
 + (void)swizzle {
     if (IsSwizzled == NO) {
         [MWTWindowMonitor swizzleSelectorString:@"orderFront:" withSelectorString:@"MWT_orderFront:" forClass:[NSWindow class]];
+        [MWTWindowMonitor swizzleSelectorString:@"makeKeyAndOrderFront:" withSelectorString:@"MWT_makeKeyAndOrderFront:" forClass:[NSWindow class]];
         [MWTWindowMonitor swizzleSelectorString:@"activateIgnoringOtherApps:" withSelectorString:@"MWT_activateIgnoringOtherApps:" forClass:[NSApplication class]];
         IsSwizzled = YES;
     }
