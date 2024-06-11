@@ -12,7 +12,7 @@ adsk::core::Ptr<UserInterface> ui;
 
 extern "C" XI_EXPORT bool run(const char* context)
 {
-    NSLog(@"MWT is running");
+    NSLog(@"MWT is running v0.92");
 	app = Application::get();
 	if (!app)
 		return false;
