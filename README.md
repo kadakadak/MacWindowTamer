@@ -1,3 +1,6 @@
+**Note: This plugin may no longer be needed soon**
+If Autodesk has fixed this issue on their side, you should probably disable this plugin
+
 The aim of this Add-In is to improve how Fusion's various browser and tool windows behave on the Mac. It does this by establishing parent/child relationships between windows so MacOS's Window Server can keep them correctly ordered or corralled in the correct Space. 
 
 **To Install:**
